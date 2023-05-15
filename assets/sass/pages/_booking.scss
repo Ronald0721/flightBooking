@@ -1,0 +1,246 @@
+// Booking-form
+.booking {
+  &--form {
+    width: 100%;
+    height: auto;
+    @include mobile {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    &__icon {
+      width: torem(66);
+      height: torem(66);
+      background: $light-grey;
+      border-radius: 50%;
+      margin: 13px auto 0;
+
+      @include justify-align-center();
+      @include mobile {
+        width: torem(50);
+        height: torem(50);
+      }
+    }
+  }
+
+  // Booking nav
+  &--nav {
+    background: $white;
+    @include flexbox();
+    @include justify-content(center);
+
+    &__item {
+      padding: $spacing-lg $spacing-xs $spacing-md;
+      text-align: center;
+      position: relative;
+      width: torem(165);
+      z-index: 1;
+      @include mobile {
+        width: torem(65);
+        @include flex-grow(1);
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: torem(3);
+        width: torem(120);
+        background-color: $light-grey;
+        transform: translateY(-50%);
+        right: torem(-70);
+        z-index: -1;
+
+        @include mobile {
+          top: 45%;
+        }
+      }
+
+      label {
+        font-size: $small;
+        font-family: $pop-rgl;
+        color: $black;
+        letter-spacing: -0.39px;
+        margin-bottom: 0;
+        margin-top: $spacing-xs;
+
+        @include mobile {
+          font-size: $xxsmall;
+        }
+      }
+
+      &.active {
+        .booking--form__icon {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  // Booking-content
+  &--content {
+    padding: $spacing-xlg;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    color: $silver;
+
+    @include mobile {
+      padding: $spacing-md;
+    }
+
+    label {
+      font-family: $pop-rgl;
+      @include mobile {
+        font-size: $xsmall;
+      }
+    }
+
+    .input-group {
+      background-color: $white;
+      border-radius: 4px;
+
+      &-field {
+        font-family: $pop-rgl;
+        height: torem(54);
+        border: none;
+        @include flex-grow(1);
+        @include justify-align-center();
+        @include justify-content(start);
+        @include mobile {
+          height: torem(30);
+          font-size: $small;
+        }
+
+        // Remove input border when focus & active
+        &:focus,
+        & :active {
+          border: none;
+          border-color: none;
+          box-shadow: none;
+        }
+
+        // Hide arrows from input
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+        }
+      }
+
+      &-text {
+        background-color: $white;
+        color: $primary-color;
+        .fa {
+          font-weight: 500;
+        }
+      }
+
+      .bootstrap-select {
+        .selectpicker {
+          appearance: none;
+          @extend .form-control;
+          @extend .input-group-field;
+        }
+
+        // bootstrap-select button
+        button {
+          display: none;
+        }
+      }
+    }
+
+    &__button {
+      padding: $spacing-xlg $spacing-md;
+      @include justify-align-center();
+
+      button {
+        border: none;
+        font-size: $h6;
+        font-family: $pop-smb;
+        width: torem(312);
+        height: torem(54);
+        @include mobile {
+          height: torem(40);
+          font-size: $small;
+        }
+
+        &:hover {
+          color: $light-grey;
+        }
+
+        &:focus,
+        & :active {
+          border: none;
+          border-color: none;
+          box-shadow: none;
+          color: $white;
+        }
+      }
+    }
+
+    &__next-btn {
+      font-family: $pop-smb;
+      color: $primary-color;
+      @include justify-align-center();
+      @include mobile {
+        font-size: $small;
+      }
+
+      &:hover {
+        color: $white;
+      }
+
+      span,
+      i {
+        font-size: $h6;
+        @include mobile {
+          font-size: $small;
+        }
+      }
+    }
+  }
+
+  // Booking-contact
+  &--contact {
+    margin: $spacing-lg 0;
+    font-family: $pop-rgl;
+    height: torem(54);
+    @extend .input-group-field;
+    @include mobile {
+      height: torem(40);
+      width: 90%;
+      margin: $spacing-lg auto;
+    }
+
+    &__input {
+      color: $silver;
+      width: 100%;
+      height: inherit;
+      @include mobile {
+        font-size: $xsmall;
+      }
+
+      &:focus,
+      & :active {
+        border-color: $primary-color;
+        box-shadow: 0 0 5px $primary-color;
+      }
+    }
+
+    .input-group-append {
+      button {
+        width: torem(149);
+        font-size: $normal;
+        border-radius: 0 4px 4px 0;
+        @include mobile {
+          height: torem(40);
+          font-size: $xsmall;
+          width: torem(180);
+        }
+
+        &:hover {
+          color: $light-grey;
+        }
+      }
+    }
+  }
+}

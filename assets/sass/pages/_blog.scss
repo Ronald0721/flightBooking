@@ -1,0 +1,97 @@
+.header {
+  margin-bottom: torem(85);
+
+  background: {
+    size: cover;
+  }
+
+  position: relative;
+
+  &--lg {
+    height: torem(755);
+    @include mobile {
+      height: torem(900);
+    }
+  }
+
+  &--brushed {
+    &:before {
+      content: "";
+
+      background: {
+        image: url(../images/brushstroke-up@3x.png);
+        size: cover;
+      }
+
+      width: 100%;
+      height: $spacing-lg;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+
+      background: {
+        image: url(../images/brushstrokes@3x.png);
+        size: cover;
+      }
+
+      width: 100%;
+      height: $spacing-xlg;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+
+  .container {
+    height: 100%;
+    z-index: 2;
+    .text-left {
+      margin-top: torem(170);
+      @include mobile {
+        padding: 0 $spacing-xlg;
+        margin-top: torem(50);
+      }
+
+      h1 {
+        text-align: start;
+        margin: 0 auto;
+        color: $white;
+        font-family: $pop-bld;
+        position: relative;
+        font-size: torem(100);
+        line-height: torem(100);
+        @include mobile {
+          font-size: $h1;
+          line-height: torem(80);
+          text-align: center;
+        }
+
+        &:after {
+          content: "";
+          width: torem(20);
+          height: torem(20);
+          margin: 64px 0 15px;
+          background-color: $primary-color;
+          display: block;
+          position: absolute;
+          right: torem(35);
+          bottom: 0;
+        }
+      }
+
+      p {
+        font-size: torem(16);
+        font-family: $pop-smb;
+        color: $primary-color;
+        padding: $spacing-xlg $spacing-xs;
+        @include mobile {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

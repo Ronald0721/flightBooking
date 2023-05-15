@@ -1,0 +1,51 @@
+//overriding bootstrap theme colors
+$theme-colors: (
+  "primary": #fdbe13,
+  "secondary": #fcb200,
+  "success": #00bc00,
+  "light": #f4f5f7,
+  "danger": #e82600,
+  "accent": #0586fe,
+);
+
+//disabling default bootstrap box shadows
+
+$enable-shadows: false;
+
+.btn {
+  border-radius: 0;
+}
+
+// Bootstrap Date Picker Customizations
+.datepicker td,
+th {
+  text-align: center;
+  padding: 8px 13px;
+  font-size: 14px;
+}
+
+.datepicker th {
+  text-align: center;
+}
+
+.datepicker td:hover {
+  background-color: #fdbe13;
+  color: #ffffff;
+}
+
+// @each $color,
+// $value in $theme-colors {
+//     .btn-ghost-#{$color} {
+//         border: solid 1px $value;
+//         background-color: transparent;
+//         color: $value;
+//         font-family: $Display-Semibold;
+//         &:hover{
+//         	background-color:  $value;
+//         	color: $white;
+//         }
+
+//     }
+// }
+
+// ]
